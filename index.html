@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+<style>
+    /* Overall Background and Layout */
+    body {
+        background-color: #f5f5dc; /* Beige */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #c3b1e1; /* Pastel Purple */
+        overflow: hidden;
+    }
+
+    /* Central Box */
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        background: #fff0f5; /* Very light pink background */
+        padding: 50px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* Left Side: Text and Image */
+    .content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+    }
+
+    /* Typing Animation CSS */
+    .typing-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid #c3b1e1;
+        width: 0;
+        /* Adjust the '4s' below to make typing faster or slower */
+        animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+        margin-bottom: 30px;
+        color: #c3b1e1;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes blink {
+        from, to { border-color: transparent }
+        50% { border-color: #c3b1e1 }
+    }
+
+    /* Picture Frame */
+    .photo-frame {
+        width: 280px;
+        height: 280px;
+        border: 8px solid #ffd1dc; /* Pastel Pink */
+        border-radius: 20px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the picture fills the box perfectly */
+    }
+
+    /* Right Side: Tree */
+    .tree-container {
+        width: 320px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    /* Heart Leaf Animation */
+    .heart {
+        fill: #ffb6c1; /* Pastel Pink */
+        animation: flutter 3s infinite ease-in-out alternate;
+        transform-origin: center;
+    }
+    
+    /* Slight color variations for the leaves */
+    .heart.purple { fill: #c3b1e1; }
+    .heart.light-pink { fill: #ffd1dc; }
+
+    @keyframes flutter {
+        0% { transform: scale(1) rotate(-3deg); }
+        100% { transform: scale(1.1) rotate(3deg); }
+    }
+</style>
+</head>
+<body>
+
+    <!-- AUDIO PLAYER -->
+    <!-- Place your custom music file in the same folder. Modern browsers require the user to interact with the page before audio can autoplay, which is handled by the script at the bottom. -->
+    <audio id="bg-music" loop>
+        <source src="your-song.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        
+        <!-- Left Side: Message and Picture -->
+        <div class="content-left">
+            <div class="typing-text">Happy Birthday, my love! ❤️</div>
+            <div class="photo-frame">
+                <!-- Change 'her-picture.jpg' to your actual image file name -->
+                <img src="her-picture.jpg" alt="Picture of us">
+            </div>
+        </div>
+
+        <!-- Right Side: Heart Tree Built with SVG -->
+        <div class="tree-container">
+            <svg viewBox="0 0 200 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- Tree Trunk & Branches -->
+                <path d="M90,250 C90,150 70,100 100,80 C130,100 110,150 110,250 Z" fill="#d2b48c" />
+                <path d="M95,150 Q70,120 40,100" stroke="#d2b48c" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path d="M105,160 Q140,130 160,110" stroke="#d2b48c" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path d="M100,120 Q90,90 80,60" stroke="#d2b48c" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M100,110 Q120,80 130,50" stroke="#d2b48c" stroke-width="6" fill="none" stroke-linecap="round"/>
+                
+                <!-- SVG Hearts acting as leaves -->
+                <g class="heart" transform="translate(15, 75) scale(0.6)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart light-pink" transform="translate(130, 85) scale(0.7)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart purple" transform="translate(55, 30) scale(0.8)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart" transform="translate(100, 20) scale(0.6)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart light-pink" transform="translate(75, -10) scale(0.9)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart purple" transform="translate(45, 110) scale(0.5)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart" transform="translate(125, 120) scale(0.55)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+                <g class="heart light-pink" transform="translate(85, 55) scale(0.5)">
+                    <path d="M24,42 C10,30 0,20 0,12 C0,5 5,0 12,0 C16,0 20,2 24,6 C28,2 32,0 36,0 C43,0 48,5 48,12 C48,20 38,30 24,42 Z" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Script to auto-start music upon any click on the screen -->
+    <script>
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('bg-music');
+            if(audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
